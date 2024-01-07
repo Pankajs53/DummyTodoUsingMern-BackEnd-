@@ -68,6 +68,7 @@ exports.logIn = async(req,res) => {
             const payload = {
                 email:existUser.email,
                 todo:existUser.todo,
+                id:existUser._id,
             }
 
             let token = jwt.sign(payload,process.env.JWT_KEY);

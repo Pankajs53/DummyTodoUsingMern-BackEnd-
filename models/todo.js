@@ -3,15 +3,11 @@ const mongoose = require("mongoose");
 const User = require("./User")
 
 const todoSchema = new mongoose.Schema({
-    user:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"User",
-    },
-    Name:{
+    name:{
         type:String,
         require:true,
     },
-    Description:{
+    description:{
         type:String,
         required:true,
     },
@@ -22,7 +18,7 @@ const todoSchema = new mongoose.Schema({
     },
     createdOn:{
         type:Date,
-        required:true,
+        default: Date.now,
     },
     updatedOn:{
         type:Date,
